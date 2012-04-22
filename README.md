@@ -11,21 +11,25 @@ once your done constructing your url call toString() to return it.
 Sample Usage
 ------------
 Create a new url from scratch
-```
+```cfml
+<cfscript>
 myurl = new net.m0nk3y.urlbuilder.UrlBuilder()
             .withScheme("http")
             .withHost("google.com")
             .withPath("/")
             .addParam("q", "Foo Fighters")
             .toString();
+</cfscript>
 ```
 
 Alter an existing url
-```
+```cfml
+<cfscript>
 mynewurl = new net.m0nk3y.urlbuilder.UrlBuilder()
             .fromString("http://example.com/foo/bar.html?abc=123")
             .withScheme("https") 
             .setParam("abc", 456)
             .toString();
+</cfscript>            
 ```
 
