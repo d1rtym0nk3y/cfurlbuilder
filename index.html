@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>cfurlbuilder by d1rtym0nk3y</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/d1rtym0nk3y/cfurlbuilder">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/d1rtym0nk3y/cfurlbuilder/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/d1rtym0nk3y/cfurlbuilder/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>cfurlbuilder</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/d1rtym0nk3y">d1rtym0nk3y</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>ColdFusion Url Builder</h1>
+
+<p>Create and modify URLs and URL parameters easily, with a builder class.</p>
+
+<p>Simplified clone of <a href="https://github.com/mikaelhg/urlbuilder">mikaelhg</a>'s java url builder for ColdFusion. 
+Since we're almost always after a url represented as a string this class won't return a Url or Uri object, 
+once your done constructing your url call toString() to return it.</p>
+
+<h2>Sample Usage</h2>
+
+<p>Create a new url from scratch</p>
+
+<div class="highlight">
+<pre><span class="nb">&lt;cfscript&gt;</span>
+<span class="nv">myurl</span> <span class="o">=</span> <span class="nv">new</span> <span class="nf">net.m0nk3y.urlbuilder.UrlBuilder</span><span class="p">()</span>
+            <span class="p">.</span><span class="nf">withScheme</span><span class="p">(</span><span class="s2">"http"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">withHost</span><span class="p">(</span><span class="s2">"google.com"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">withPath</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">addParam</span><span class="p">(</span><span class="s2">"q"</span><span class="p">,</span> <span class="s2">"Foo Fighters"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">toString</span><span class="p">();</span>
+<span class="nb">&lt;/cfscript&gt;</span>
+</pre>
+</div>
+
+
+<p>Alter an existing url</p>
+
+<div class="highlight">
+<pre><span class="nb">&lt;cfscript&gt;</span>
+<span class="nv">mynewurl</span> <span class="o">=</span> <span class="nv">new</span> <span class="nf">net.m0nk3y.urlbuilder.UrlBuilder</span><span class="p">()</span>
+            <span class="p">.</span><span class="nf">fromString</span><span class="p">(</span><span class="s2">"http://example.com/foo/bar.html?abc=123"</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">withScheme</span><span class="p">(</span><span class="s2">"https"</span><span class="p">)</span> 
+            <span class="p">.</span><span class="nf">setParam</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">,</span> <span class="m">456</span><span class="p">)</span>
+            <span class="p">.</span><span class="nf">toString</span><span class="p">();</span>
+<span class="nb">&lt;/cfscript&gt;</span>            
+</pre>
+</div>
+
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
